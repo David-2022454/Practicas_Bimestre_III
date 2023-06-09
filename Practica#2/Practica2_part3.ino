@@ -34,10 +34,6 @@ void loop() {
   Vout = operacion / 1023;
   result = (5/Vout) -1;
   Rx = R * result;
-Serial.println(Vout);
-delay(5000);
-Serial.println(result);
-delay(5000);
 
   LCD_David.setCursor(0,0);
   LCD_David.print("Valor de Rx:");
