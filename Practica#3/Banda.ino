@@ -114,8 +114,7 @@ int color(){
   delay(50);
 
   if(resultado_verde > resultado_azul && resultado_verde > resultado_rojo){  //Si el resultado del verde es mayor a los demas realiza lo siguiente
-  MOTOR.write(110
-  );  // Mueve el servo a un lado
+  MOTOR.write(110); 
   digitalWrite(LED_V, HIGH);
   LCD_David.clear();
   LCD_David.setCursor(5,0);
@@ -130,7 +129,7 @@ int color(){
   LCD_David.setCursor(3,0);
   LCD_David.print("NO VERDE");
 
-  MOTOR.write(140);  //Regresa el servo a su posicion de inicio//El color escaneado no es verde
+  MOTOR.write(140); 
   digitalWrite(LED_V, LOW);
   BANDA_STP.step(-5000); 
   
