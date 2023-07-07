@@ -33,7 +33,7 @@ int indice_actual = 0; // Indice actual en el arreglo de nombres
 #define LED_Chimaltenango  17 //A3 
 
 #define PCF8574_HIGH LOW
-#define PCF8574_HIGH HIGH
+#define PCF8574_LOW HIGH
 
 SoftwareSerial bluetooth(2, 4);
 
@@ -240,7 +240,7 @@ delay(1000);
     melodia_buzzer();
   }
   if (randomName == "Jutiapa" && respuesta == "Jalapa") {
-    expansor_PCF2.write(2,PCF8574_HIGH);
+    expansor_PCF2.write(1,PCF8574_HIGH);
     noTone(BUZZER);
   } else if(randomName == "Jutiapa" && respuesta != "Flores"){
     melodia_buzzer();
@@ -248,5 +248,11 @@ delay(1000);
 }
 
 void melodia_buzzer(){
-  tone(BUZZER,1000,1000);
+  tone(BUZZER, 196, 250); // Frecuencia: G3, Duración: 250ms
+  delay(250);
+  tone(BUZZER, 147, 250); // Frecuencia: D3, Duración: 250ms
+  delay(250);
+  tone(BUZZER, 131, 500); // Frecuencia: C3, Duración: 500ms
+  delay(500);
+  tone(BUZZER, 98, 1000); // Frecuencia: G2, Duración: 1000ms
 }
